@@ -31,7 +31,8 @@
     :defines {"USE_SYSTEM_SQLITE" use-system-lib})
   (declare-native
     :name "sqlite3"
-    :source @["sqlite3.c" "main.c"])
+    :source @["sqlite3.c" "main.c"]
+    :defines {"SQLITE_ENABLE_FTS5" "1"})
 )
 
 (sh-phony "update-sqlite3" []
